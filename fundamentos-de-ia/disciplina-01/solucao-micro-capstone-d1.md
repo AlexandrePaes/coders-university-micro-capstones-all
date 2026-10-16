@@ -11,7 +11,8 @@
 
 **Data:** 15 de Outubro de 2026  
 **Responsável:** Consultoria de Estratégia de IA  
-**Público-alvo:** Comitê Executivo, Diretoria de Riscos (CRO) e TI  
+**Público-alvo:** Comitê Executivo, Diretoria de Riscos (CRO) e TI 
+**Versão:** 3 
 
 ---
 
@@ -117,12 +118,13 @@ A escolha da solução híbrida se encaixa nas necessidades do Banco Brad por tr
 
 ## 8. Mapa de Riscos Iniciais
 
-| Risco | Impacto | Mitigação |
+| Risco | Impacto | Estratégia de Mitigação (Solução) |
 | :--- | :---: | :--- |
-| **Alucinação do LLM** | Alto | Uso de RAG e proibição de respostas fora da base de conhecimento fornecida. |
-| **Vazamento de Dados** | Crítico | Implementação em nuvem privada (Azure OpenAI / AWS Bedrock) com criptografia ponta a ponta. |
-| **Resistência da Equipe** | Médio | Programa de *reskilling* para analistas passarem de "classificadores" a "auditores da IA". |
-| **Interpretação Enviesada** | Médio | Auditorias periódicas nos prompts e nas bases de conhecimento utilizadas. |
+| **Alucinações** | Alto | RAG + Validação: Limitar a resposta da IA aos manuais do banco e manter supervisão humana obrigatória. |
+| **Crescimento de Custo** | Médio | Arquitetura em Camadas: Usar regras de RPA para filtrar volume irrelevante antes de enviar para o LLM. |
+| **Interpretação Incorreta** | Alto | Confidence Threshold: Casos com baixa confiança da IA são enviados automaticamente para analistas seniores. |
+| **Segurança de Dados** | Crítico | Nuvem Privada: Utilizar instâncias privadas de modelos (VPC) para garantir que os dados não saiam do perímetro do banco. |
+| **Abuso de Prompt** | Médio | Filtros e Monitoramento: Implementar camadas de segurança na entrada para evitar comandos que burlem as políticas. |
 
 ---
 
